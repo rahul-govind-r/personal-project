@@ -20,7 +20,7 @@ const checkAvailability = async (cowinData) => {
         sessions = cowinData[i].sessions
         for ( j=0; j < sessions.length; j++ )
         {
-            session=sessions[i]
+            session=sessions[j]
             if (session.min_age_limit === 18 && session.available_capacity_dose1 === 0)
             {
                 message = "Hi, Vaccine slot available at " + cowinData[i].name + " on " + session.date + ". The address of the location is " + cowinData[i].address
