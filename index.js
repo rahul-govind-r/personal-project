@@ -1,5 +1,7 @@
 const cowinApi = async () => {
-    const response = await fetch('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=304&date=25-05-2021')
+    var d = new Date();
+    var date = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
+    const response = await fetch('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=304&date=' + date)
     const myJson =  await response.json(); //extract JSON from the http response
     return myJson.centers
 }
