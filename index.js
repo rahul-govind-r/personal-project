@@ -24,7 +24,7 @@ const checkAvailability = async (cowinData) => {
         for ( j=0; j < sessions.length; j++ )
         {
             session=sessions[j]
-            if (session.min_age_limit === 18 && session.available_capacity_dose1 === 0)
+            if (session.min_age_limit === 18 && session.available_capacity_dose1 !== 0)
             {
                 message = "Hi, " + session.vaccine + " is available at " + cowinData[i].name + " on " + session.date + ". The address of the location is " + cowinData[i].address
                 url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=@slotAlertlocalktm&text=' + encodeURIComponent(message)
