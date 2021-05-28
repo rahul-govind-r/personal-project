@@ -3,7 +3,7 @@ const cowinApi = async () => {
     var date = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
     const response = await fetch('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=304&date=' + date)
     const myJson =  await response.json(); //extract JSON from the http response
-    if (!response.ok) 
+    if (response.status !== 200) 
     {
         window.location.reload()
     }
