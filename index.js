@@ -5,7 +5,7 @@ const cowinApi = async () => {
     const myJson =  await response.json(); //extract JSON from the http response
     if (response.status !== 200) 
     {
-        message = "Error 500 : API FAILED"
+        message = "Error code " + response.status + " : API FAILED"
         url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=616911342&text=' + encodeURIComponent(message)
         await sendtoTelegram()
         window.location.reload()
