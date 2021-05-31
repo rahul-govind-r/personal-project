@@ -33,8 +33,23 @@ const checkAvailability = async (cowinData) => {
             {
                 var theDiv = document.getElementById("root");
                 theDiv.textContent = "Vaccine Available for 18+";
-                message = "Hi, " + session.vaccine + " (" + cowinData[i].fee_type + ") is available at " + cowinData[i].name + " on " + session.date + ". The address of the location is " + cowinData[i].address
+                // message = "Hi, " + session.vaccine + " (" + cowinData[i].fee_type + ") is available at " + cowinData[i].name + " on " + session.date + ". The address of the location is " + cowinData[i].address
+                message = `Kottayam
+
+Vaccine : ${session.vaccine}
+
+Age Group : ${session.min_age_limit}
+
+Center Name: ${cowinData[i].name}
+
+Date: ${session.date}
+
+Dose 1 Available capacity : ${session.available_capacity_dose1}
+
+Fee-type: ${cowinData[i].fee_type}`
+
                 url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=@slotAlertlocalktm&text=' + encodeURIComponent(message)
+                
                 await sendtoTelegram()
             }
         }
