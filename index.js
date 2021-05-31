@@ -34,7 +34,7 @@ const checkAvailability = async (cowinData) => {
                 var theDiv = document.getElementById("root");
                 theDiv.textContent = "Vaccine Available for 18+";
                 // message = "Hi, " + session.vaccine + " (" + cowinData[i].fee_type + ") is available at " + cowinData[i].name + " on " + session.date + ". The address of the location is " + cowinData[i].address
-                message = `Kottayam
+                message = `${cowinData[i].district_name}
 
 Vaccine : ${session.vaccine}
 
