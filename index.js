@@ -29,7 +29,7 @@ const checkAvailability = async (cowinData) => {
         {
             vaccine_type = cowinData[i].fee_type
             session=sessions[j]
-            if (session.min_age_limit === 18 && session.available_capacity_dose1 !== 0)
+            if (session.min_age_limit === 18 && session.available_capacity_dose1 > 1)
             {
                 var theDiv = document.getElementById("root");
                 theDiv.textContent = "Vaccine Available for 18+";
