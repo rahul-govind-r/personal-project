@@ -65,7 +65,7 @@ async function sendtoTelegram ()
 
 const looper = async () => {
     await checkStatus()
-    setTimeout(looper , 10000)
+    setTimeout(looper , 30000)
 }
 window.onload = function() {
     looper()
