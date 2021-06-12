@@ -1,4 +1,4 @@
-const cowinApi = async () => {
+const cowinApiKOC = async () => {
     var d = new Date();
     var date = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
     const response = await fetch('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=307&date=' + date)
@@ -7,21 +7,21 @@ const cowinApi = async () => {
     {
         message = "Error code " + response.status + " : API FAILED"
         url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=616911342&text=' + encodeURIComponent(message)
-        await sendtoTelegram()
+        await sendtoTelegramKOC()
         window.location.reload()
     }
     return myJson.centers
 }
 
-const checkStatus = async () => {
-    var cowinData = await cowinApi()
+const checkStatusKOC = async () => {
+    var cowinData = await cowinApiKOC()
     if (cowinData.length > 0)
     {
-        checkAvailability(cowinData)
+        checkAvailabilityKOC(cowinData)
     }
 }
 
-const checkAvailability = async (cowinData) => {
+const checkAvailabilityKOC = async (cowinData) => {
     for ( i=0; i < cowinData.length; i++ )
     {
         sessions = cowinData[i].sessions
@@ -50,12 +50,12 @@ Fee-type: ${cowinData[i].fee_type}`
 
                 url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=@slotAlertlocalktm&text=' + encodeURIComponent(message)
                 
-                await sendtoTelegram()
+                await sendtoTelegramKOC()
             }
         }
     }
 }
-async function sendtoTelegram () 
+async function sendtoTelegramKOC () 
 {
     const response = await fetch( url , {
       method: 'post',
@@ -63,10 +63,10 @@ async function sendtoTelegram ()
     return response
 }
 
-const looper = async () => {
-    await checkStatus()
-    setTimeout(looper , 30000)
+const looperKOC = async () => {
+    await checkStatusKOC()
+    setTimeout(looperKOC , 30000)
 }
 window.onload = function() {
-    looper()
+    looperKOC()
 }
