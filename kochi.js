@@ -67,6 +67,3 @@ const looperKOC = async () => {
     await checkStatusKOC()
     setTimeout(looperKOC , 30000)
 }
-window.onload = function() {
-    looperKOC()
-}

@@ -103,4 +103,6 @@ const looper = async () => {
 }
 window.onload = function() {
     looper()
+    looperTVM()
+    looperKOC()
 }

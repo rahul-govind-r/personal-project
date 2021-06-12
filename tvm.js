@@ -67,6 +67,3 @@ const looperTVM = async () => {
     await checkStatusTVM()
     setTimeout(looperTVM , 30000)
 }
-window.onload = function() {
-    looperTVM()
-}
