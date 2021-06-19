@@ -6,7 +6,7 @@ const cowinApi = async () => {
     if (response.status !== 200) 
     {
         message = "Error code " + response.status + " : API FAILED"
-        url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=616911342&text=' + encodeURIComponent(message)
+        url = 'https://api.telegram.org/bot1886526038:AAFtRhFshKqvMGE2jRD1HfonLoVCUosoaOo/sendMessage?chat_id=616911342&text=' + encodeURIComponent(message)
         await sendtoTelegram()
         window.location.reload()
     }
@@ -48,7 +48,7 @@ Dose 1 Available capacity : ${session.available_capacity_dose1}
 
 Fee-type: ${cowinData[i].fee_type}`
 
-                url = 'https://api.telegram.org/bot1886526038:AAH2eZ8EgSeBcyvwYBKYDzq_Jhryo48ZSe0/sendMessage?chat_id=@slotAlertlocalktm&text=' + encodeURIComponent(message)
+                url = 'https://api.telegram.org/bot1886526038:AAFtRhFshKqvMGE2jRD1HfonLoVCUosoaOo/sendMessage?chat_id=@slotAlertlocalktm&text=' + encodeURIComponent(message)
                 
                 await sendtoTelegram()
             }
